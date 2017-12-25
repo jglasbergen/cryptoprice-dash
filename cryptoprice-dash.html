@@ -66,11 +66,17 @@
         <paper-spinner-lite active="[[loading]]"></paper-spinner-lite>
 
         <div hidden$="[[loading]]">
-            <template is="dom-repeat" items="[[currencies]]">
-                <paper-button noink on-click="_getCurrencyHistoricData" data-item$="[[item.code]]">
-                    [[item.name]] - $[[item.price]]
-                </paper-button>
-            </template>
+            <div class="content">
+                <div class="header">
+                    <template is="dom-repeat" items="[[currencies]]">
+                        <div class="currency">
+                            <paper-button noink on-click="_getCurrencyHistoricData" data-item$="[[item.code]]">
+                                [[item.name]] - $[[item.price]]
+                            </paper-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
         </div>
 
         <div hidden$="[[loading]]" style="width:100%; max-width:700px; margin:0 auto">
